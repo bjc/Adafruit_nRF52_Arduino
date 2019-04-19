@@ -28,7 +28,11 @@ compiler.warning_flags.default=
 compiler.warning_flags.more=-Wall
 compiler.warning_flags.all=-Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wno-pointer-arith
 
-compiler.path={runtime.tools.gcc-arm-none-eabi-5_2-2015q4.path}/bin/
+## I don't know how to specify runtim.tools stuff in my local arduino environment
+## so I'm overriding it here. -bjc (2019-Apr-19)
+# compiler.path={runtime.tools.gcc-arm-none-eabi-5_2-2015q4.path}/bin/
+compiler.path=/usr/local/gcc-arm-none-eabi/bin/
+
 compiler.c.cmd=arm-none-eabi-gcc
 compiler.c.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.warning_flags} {build.float_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD  -DSOFTDEVICE_PRESENT
 compiler.c.elf.cmd=arm-none-eabi-gcc
